@@ -2,7 +2,6 @@
 
 import { AlertModal } from "@/components/modals/alert-modal";
 import { Heading } from "@/components/ui/Heading";
-import { ApiAlert } from "@/components/ui/api-alert";
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -91,7 +90,7 @@ export const BillboardForm: React.FC<IBillboardFormProps> = ({
         `/api/${params.storeId}/billboards/${params.billboardId}`
       );
       router.refresh();
-      router.push("/");
+      router.push(`/${params.storeId}/billboards`);
       toast.success("Billboard Deleted");
     } catch (error) {
       toast.error("Make sure you removed all categories using this billboard");
